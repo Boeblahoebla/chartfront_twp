@@ -18,12 +18,12 @@ class ChartExplorer extends HTMLElement {
 
         const fontAwesomeLink = document.createElement('link');
         fontAwesomeLink.rel = 'stylesheet';
-        fontAwesomeLink.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css'; // ✅ Loads FontAwesome
+        fontAwesomeLink.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css';
         this.shadowRoot.appendChild(fontAwesomeLink);
 
         const noUiSliderLink = document.createElement('link');
         noUiSliderLink.rel = 'stylesheet';
-        noUiSliderLink.href = 'https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.8.1/nouislider.min.css'; // ✅ Loads FontAwesome
+        noUiSliderLink.href = 'https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.8.1/nouislider.min.css';
         this.shadowRoot.appendChild(noUiSliderLink);
 
     }
