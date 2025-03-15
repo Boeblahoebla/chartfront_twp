@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.slider-container {
+  margin: 0 auto;
+  max-width: 1024px;
+  min-width: 1024px;
+  padding-top: 1rem;
+}
+
+.img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-width: 1024px;
+  min-height: 768px;
+}
+
+.model-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.domain-container {
+  display: flex;
+  position: absolute;
+  top: 30px;
+  right: 200px;
+
+}
+
+.product-container {
+  display: flex;
+  position: absolute;
+  top: 30px;
+  right: 475px;
+}
+
+.chart-container {
+  margin-bottom: 4px;
+}
+
+#domain-dropdown, #chart-dropdown {
+  border: 2px solid white;
+  border-radius: 6px;
+  appearance: none;
+  padding: 0 10px 0 15px;
+  width: 100%;
+  color: white;
+  background-color: dodgerblue;
+  font-size: 20px;
+}
+
+option {
+  background-color: rgb(120,120,120);
+}
+
+.slider-controls {
+  margin: 1rem;
+}
+
+#speedSlider {
+  min-width: 200px;
+}
+
+
+#playpause {
+  padding: 1rem;
+}
