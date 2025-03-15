@@ -1,65 +1,56 @@
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const BundleAnalyzerPlugin =
-  require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   entry: {
-    bundle: path.resolve(__dirname, 'src/js/index.js'),
+    'chart-explorer': path.resolve(__dirname, 'src/js/ChartExplorer.js'),
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name][contenthash].js',
+    filename: '[name].min.js',
     clean: true,
-    assetModuleFilename: '[name][ext]',
   },
-  devtool: 'source-map',
   devServer: {
     static: [
-      { directory: path.resolve(__dirname, 'dist'), },
-      { directory: path.resolve(__dirname, 'src/images'), publicPath: '/images'},
+      {
+        directory: path.resolve(__dirname, 'dist'),
+      },
+      {
+        directory: path.resolve(__dirname, 'src/images'),
+        publicPath: '/images',
+      }
     ],
     port: 3000,
-    open: true,
     hot: true,
-    compress: true,
-    historyApiFallback: true,
   },
   module: {
     rules: [
       {
         test: /\.scss$/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
+        use: ['to-string-loader', 'css-loader', 'sass-loader'],
       },
       {
-        test: /\.css$/, // Match CSS files
-        use: ['style-loader', 'css-loader']
-      },
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env'],
-            plugins: ["@babel/plugin-transform-runtime"],
-
-          },
-        },
-      },
-      {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: 'asset/resource',
+        test: /\.css$/,
+        use: ['to-string-loader', 'css-loader'],
       },
     ],
   },
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new TerserPlugin({
+        extractComments: false,
+      }),
+      new CssMinimizerPlugin()
+    ],
+    usedExports: true,
+  },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Webpack App',
-      filename: 'index.html',
       template: 'src/template.html',
     }),
-    new BundleAnalyzerPlugin(),
   ],
-}
+};

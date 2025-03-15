@@ -6,45 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://kit.fontawesome.com/b99c00c64b.js" crossorigin="anonymous"></script>
     <title>The weather breakdown</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+    </style>
   </head>
   <body>
-    <div class="container">
-      <div class="domain-container">
-        <div>
-          <select name="domain-select" id="domain-dropdown" class="domain-select">
-          </select>
-        </div>
-      </div>
 
-      <div class="product-container">
-        <select name="chart-select" id="chart-dropdown" class="chart">
-        </select>
-      </div>
+  <chart-explorer></chart-explorer>
 
-
-      <div class="model-container">
-
-
-
-        <div class="img-container">
-          <div class="chart-container">
-            <img src="images/eur/mslp_eur_f000.png" alt="chart" id="my-chart">
-          </div>
-          <div class="slider-container">
-            <div id="time-slider"></div>
-          </div>
-          <div id="playpause" class="slider-controls"><i class="fa-solid fa-play fa-2xl"></i></div>
-          <div id="speedSlider"></div>
-        </div>
-
-
-      </div>
-
-
-      <div class="forecasthour-container">
-        <div class="start-hour"></div>
-        <div class="end-hour"></div>
-      </div>
-    </div>
   </body>
+</html>
 </html>

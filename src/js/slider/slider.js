@@ -19,18 +19,15 @@ export const initializeTimeSlider = (timeSlider, image, myGFSData) => {
  *  corresponding with the forecast hour
  * **/
 export const initSliderHandlers = (timeSlider, image) => {
-    // Slider update handler
     timeSlider.noUiSlider.on('update', (values, handle) => {
 
         console.log(handle);
 
-        // Find the value of the active handle as it changes
+        // Find the value of the active handle as it changes &
+        // Update the image with the new slider value
         const value = Number(values[handle]);
-
-        // Format as "fXXX"
         const formattedValue = `f${String(value).padStart(3, '0')}`;
 
-        // Update the image with the new slider value
         image.src = image.src.replace(/f\d{3}/, formattedValue);
     });
 
