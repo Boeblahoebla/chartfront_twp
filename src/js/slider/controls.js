@@ -1,4 +1,4 @@
-import noUiSlider from "nouislider";
+import { noUiSlider } from "../utils/sliderService";
 
 let isAnimating = false;
 let animationTimeout;
@@ -8,9 +8,9 @@ let animationSpeed = 100;
 /** Function to initiate the play pause functionality
  *  It generates both the play pause controls as well as the speed slider
  ***/
-export const initializePlayPause = (slider, playPause, speedSlider) => {
-    generateControlsHandler(slider, playPause);
-    generateSpeedControl(speedSlider);
+export const initializePlayPause = (slider, playPause, speedSlider, noUIsliderlib) => {
+    generateControlsHandler(slider, playPause, noUIsliderlib);
+    generateSpeedControl(speedSlider, noUIsliderlib);
 };
 
 
@@ -80,7 +80,7 @@ const animateMiddleSlider = (slider) => {
         animationTimeout = setTimeout(moveMiddleHandle, animationSpeed);
     };
 
-    moveMiddleHandle(); // Start animation
+    moveMiddleHandle();
 };
 
 

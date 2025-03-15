@@ -4,7 +4,6 @@ import { initializePlayPause } from "./slider/controls";
 import { initializeTimeSlider } from "./slider/slider";
 import { fetchGFSData } from "./api/API";
 
-import nuiStyles from 'nouislider/dist/nouislider.css';
 import mainStyles from '../styles/main.scss';
 
 class ChartExplorer extends HTMLElement {
@@ -14,13 +13,19 @@ class ChartExplorer extends HTMLElement {
 
         // Inject processed SCSS styles into Shadow DOM
         const style = document.createElement('style');
-        style.textContent = mainStyles + nuiStyles;
+        style.textContent = mainStyles;
         this.shadowRoot.appendChild(style);
 
         const fontAwesomeLink = document.createElement('link');
         fontAwesomeLink.rel = 'stylesheet';
         fontAwesomeLink.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css'; // ✅ Loads FontAwesome
         this.shadowRoot.appendChild(fontAwesomeLink);
+
+        const noUiSliderLink = document.createElement('link');
+        noUiSliderLink.rel = 'stylesheet';
+        noUiSliderLink.href = 'https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.8.1/nouislider.min.css'; // ✅ Loads FontAwesome
+        this.shadowRoot.appendChild(noUiSliderLink);
+
     }
 
     async connectedCallback() {
@@ -61,7 +66,9 @@ class ChartExplorer extends HTMLElement {
                         <div class="slider-container">
                             <div id="time-slider"></div>
                         </div>
-                        <div id="playpause" class="slider-controls"><i class="fa-solid fa-play fa-2xl"></i></div>
+                        <div id="playpause" class="slider-controls">
+                            <i class="fa-solid fa-play fa-2xl"></i>
+                        </div>
                         <div id="speedSlider"></div>
                     </div>
                 </div>

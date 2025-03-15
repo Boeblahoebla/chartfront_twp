@@ -13,6 +13,9 @@ module.exports = {
     filename: '[name].min.js',
     clean: true,
   },
+  externals: {
+    nouislider: 'noUiSlider',
+  },
   devServer: {
     static: [
       {

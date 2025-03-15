@@ -1,5 +1,5 @@
 import { generateForecastRange } from "../helpers/foreCastRange";
-import noUiSlider from "nouislider";
+import { noUiSlider } from "../utils/sliderService";
 
 /**
  * Function to initialize the Time Slider
