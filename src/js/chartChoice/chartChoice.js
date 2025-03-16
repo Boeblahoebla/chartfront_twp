@@ -19,6 +19,8 @@ export const generateChartDropdown = (dropdown, myGFSData, domain, product) => {
         currentValue = dropdown.value
     }
 
+    dropdown.innerHTML = ""
+
     myGFSData && myGFSData[domain].forEach(chart => {
 
         let option
