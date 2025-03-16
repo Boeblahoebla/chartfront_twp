@@ -3,8 +3,6 @@ import { generateChartDropdown } from "../chartChoice/chartChoice";
 // DOM Elements
 ///////////////
 
-const chartDropdown = document.getElementById('chart-dropdown');
-
 /**
  * Function to initialize the Domain Dropdown
  * Hardcoded for now(Full Europe & Central West Europe)
@@ -12,9 +10,9 @@ const chartDropdown = document.getElementById('chart-dropdown');
  * TODO: Should come from API
  * **/
 
-export const initializeDomainDropdown = (domainDropdown, image, myGFSData) => {
+export const initializeDomainDropdown = (domainDropdown, image, myGFSData, chartDropdown) => {
     generateDomainDropdown(domainDropdown)
-    generateDomainDropDownHandler(domainDropdown, image, myGFSData)
+    generateDomainDropDownHandler(domainDropdown, image, myGFSData, chartDropdown)
 }
 
 
@@ -43,7 +41,7 @@ export const generateDomainDropdown = (domainDropdown) => {
 /**
  * Function to generate the domain dropdown handler
  * **/
-export const generateDomainDropDownHandler = (dropdown, image, myGFSData) => {
+export const generateDomainDropDownHandler = (dropdown, image, myGFSData, chartDropdown) => {
 
     dropdown.addEventListener('change', function () {
         const domain = this.value;

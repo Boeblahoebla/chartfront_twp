@@ -2,12 +2,8 @@
  * Function to initialize the Chart dropdown with the standard domain (Full Europe)
  * **/
 export const initializeChartDropdown = (chartDropdown, image, myGFSData, domain) => {
-  generateChartDropdown(
-      chartDropdown, myGFSData, domain, 'mslp'
-  )
-  generateChartDropDownHandler(
-      chartDropdown, image
-  )
+  generateChartDropdown(chartDropdown, myGFSData, domain, 'mslp')
+  generateChartDropDownHandler(chartDropdown, image)
 }
 
 /**
@@ -16,13 +12,12 @@ export const initializeChartDropdown = (chartDropdown, image, myGFSData, domain)
  * **/
 export const generateChartDropdown = (dropdown, myGFSData, domain, product) => {
 
+
     let currentValue;
 
     if(dropdown.innerHTML !== "") {
         currentValue = dropdown.value
     }
-
-    dropdown.innerHTML = "";
 
     myGFSData && myGFSData[domain].forEach(chart => {
 
@@ -37,7 +32,7 @@ export const generateChartDropdown = (dropdown, myGFSData, domain, product) => {
     if (currentValue) {
         dropdown.value = currentValue
     } else {
-        dropdown.value ='mslp'
+        dropdown.value = product
     }
 }
 
@@ -45,7 +40,7 @@ export const generateChartDropdown = (dropdown, myGFSData, domain, product) => {
  * Function to generate the chart dropdown handler
  * **/
 export const generateChartDropDownHandler = (dropdown, image) => {
-    dropdown.addEventListener('change', function () {
+    dropdown.addEventListener('change', function() {
         const selectedValue = this.value;
 
         image.src = image.src

@@ -42,8 +42,8 @@ class ChartExplorer extends HTMLElement {
             const playPause = this.shadowRoot.getElementById('playpause');
             const speedSlider = this.shadowRoot.getElementById("speedSlider");
 
+            initializeDomainDropdown(domainDropdown, image, myGFSData, chartDropdown);
             initializeTimeSlider(timeSlider, image, myGFSData);
-            initializeDomainDropdown(domainDropdown, image, myGFSData);
             initializeChartDropdown(chartDropdown, image, myGFSData, "eur");
             initializePlayPause(timeSlider, playPause, speedSlider);
         });

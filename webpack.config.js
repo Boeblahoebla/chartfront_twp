@@ -51,6 +51,15 @@ module.exports = {
     minimizer: [
       new TerserPlugin({
         extractComments: false,
+        terserOptions: {
+          compress: {
+            drop_console: true,
+            pure_funcs: ['console.log'],
+          },
+          format: {
+            comments: false,
+          },
+        },
       }),
       new CssMinimizerPlugin()
     ],

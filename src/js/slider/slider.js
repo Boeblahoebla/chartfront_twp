@@ -21,8 +21,6 @@ export const initializeTimeSlider = (timeSlider, image, myGFSData) => {
 export const initSliderHandlers = (timeSlider, image) => {
     timeSlider.noUiSlider.on('update', (values, handle) => {
 
-        console.log(handle);
-
         // Find the value of the active handle as it changes &
         // Update the image with the new slider value
         const value = Number(values[handle]);
