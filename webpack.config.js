@@ -15,6 +15,11 @@ module.exports = {
   },
   externals: {
     nouislider: 'noUiSlider',
+    chalk: 'chalk',
+    'supports-color': 'supports-color',
+    'ansi-regex': 'ansi-regex',
+    'entities': 'entities',
+    'he': 'he',
   },
   devServer: {
     static: [
