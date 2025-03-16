@@ -1,17 +1,3 @@
-# Webpack App Starter
-
-Frontend environment for building JavaScript applications
-
-Includes the following features...
-
-- Babel Loader
-- Sass Loader With Dart Sass
-- HTMLWebpackPlugin
-- WebpackDevServer
-- Asset Resource Loader
-- Source Maps
-- Caching
-
 ## Usage
 
 Run Dev Server (Port 3000)
@@ -26,10 +12,9 @@ Run Dev Server (Port 3000)
 npm run build
 ```
 
-## Demo App
+The build contains a minified MFE. You can inject this MFE into any environment by importing the js file which enables the use of a custom html element
+<chart-explorer></chart-explorer>
 
-The demo app is a very simple Joke generator. Replace with your own code and install other packages as needed
+## ChartExplorer
 
-- index.js (main javascript)
-- template.html (template)
-- styles/main.scss (styles)
+This application is a Microfrontend with the channel part along with its API counterpart.
